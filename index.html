@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101311">
+  <meta name="description" content="A tiny universe of sound. Make hypnotic loops, shape your own atmosphere, and get lost in the orbit.">
+  <title>Orbital — a little space for sound</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="./" aria-label="Orbital home"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="10"/><ellipse cx="20" cy="20" rx="19" ry="6" transform="rotate(-35 20 20)"/><circle cx="32" cy="10" r="3"/></svg>orbital<span>®</span></a>
+    <div class="header-center"><span class="status-dot"></span> AN INDEPENDENT SOUND PLAYGROUND</div>
+    <button class="text-button" id="help-open">How to play <span>↗</span></button>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><div class="eyebrow">MAKE SOMETHING OUT OF NOTHING.</div><h1 id="page-title">A little space.<br><span>A lot of sound.</span></h1></div>
+      <div class="intro-note"><span class="tiny-orbit">✳</span><p>No right notes. No wrong turns.<br>Just you, a few loops, and the universe.</p><div class="headphone">◖◗ &nbsp; Headphones make it better</div></div>
+    </section>
+    <section class="instrument" aria-label="Interactive sound playground">
+      <div class="universe">
+        <canvas id="universe" aria-label="Animated orbital visualization that responds to the music"></canvas>
+        <div class="universe-top"><span><i class="status-dot"></i> <span id="universe-state">READY TO DRIFT</span></span><span>VOL. 001 / <span id="world-code">TERRA</span></span></div>
+        <div class="orbit-caption"><span id="scene-number">01 / 04</span><h2 id="scene-name">Earth after dark</h2><p id="scene-description">Warm keys. Soft gravity. Nowhere to be.</p></div>
+        <button class="art-button" id="save-art" aria-label="Download an image of your orbit" title="Save your orbit as an image">↗</button>
+        <div class="coordinate">YOUR OWN SMALL UNIVERSE</div>
+      </div>
+      <div class="console">
+        <div class="console-title"><span class="eyebrow">THE CONTROL ROOM</span><span class="session-indicator" id="session-indicator">LOCAL SESSION</span></div>
+        <div class="transport"><button class="play-button" id="play" aria-label="Start sound"><span id="play-icon">▶</span></button><div class="transport-copy"><h2 id="play-label">Find your frequency.</h2><p id="play-hint">Press play. Leave the world behind.</p></div><button class="icon-button" id="shuffle" title="Create a new pattern" aria-label="Shuffle the pattern">⤨</button></div>
+        <div class="tempo-row"><label for="tempo">TEMPO <span><output id="tempo-value">86</output> <small>BPM</small></span></label><input type="range" id="tempo" min="55" max="140" value="86" aria-label="Tempo in beats per minute"></div>
+        <div class="sequencer-heading"><span>BUILD YOUR LOOP</span><span>16 STEPS · <span id="key-label">A MINOR</span></span></div>
+        <div class="step-counts" aria-hidden="true"><span></span><div id="step-counts"></div></div>
+        <div id="sequencer" class="sequencer" aria-label="16 step sequencer"></div>
+        <div class="sequencer-note"><span>Tap a step to make it yours.</span><span>↖ Tap a voice to mute</span></div>
+        <div class="mix"><div><label for="space">SPACE <output id="space-value">65%</output></label><input type="range" id="space" min="0" max="100" value="65"></div><div><label for="volume">VOLUME <output id="volume-value">70%</output></label><input type="range" id="volume" min="0" max="100" value="70"></div></div>
+        <div class="console-bottom"><button class="text-button" id="reset">↺ &nbsp; Reset world</button><button class="share-button" id="share">Share this loop <span>↗</span></button></div>
+      </div>
+    </section>
+    <section class="worlds" aria-labelledby="worlds-title"><div class="section-heading"><h2 id="worlds-title">Somewhere to start.</h2><span>FOUR WORLDS. INFINITE DETOURS.</span></div><div class="world-grid" id="world-grid"></div></section>
+  </main>
+  <footer><span><i class="status-dot"></i> MADE FOR GETTING A LITTLE LOST.</span><span>Synthesized in your browser. Saved on this device.</span><button class="text-button" id="motion" aria-pressed="false">Pause visuals</button></footer>
+  <div class="toast" role="status" id="toast"></div>
+  <dialog id="help"><button class="dialog-close icon-button" id="help-close" aria-label="Close instructions">×</button><span class="eyebrow">WELCOME TO YOUR ORBIT</span><h2>Less thinking.<br>More listening.</h2><p>Orbital is a tiny music machine. Every sound is made right here in your browser.</p><ol><li><strong>Choose a world.</strong> Each has its own mood, notes, and rhythm.</li><li><strong>Press play.</strong> Or use the space bar when you’re not on a control.</li><li><strong>Make a mark.</strong> Tap the grid to add or remove notes. Tap a voice name to mute it.</li><li><strong>Get a little lost.</strong> Change the tempo, add space, or shuffle into something new.</li></ol><p class="help-small">Your session stays on this device. “Share this loop” copies a link with your pattern inside it. The arrow on the artwork saves an image. Audio starts only when you press play.</p><button class="share-button" id="help-done">Let’s make some noise <span>↗</span></button></dialog>
+</body>
+</html>
